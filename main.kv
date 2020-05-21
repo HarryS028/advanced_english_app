@@ -1,0 +1,110 @@
+WindowManager:
+    MainWindow:
+    PlayWindow:
+    SearchWindow:
+    PreferenceWindow:
+
+<MenuButton@Button>:
+
+<HomeCard@MDCard>:
+    MDCard:
+        orientation: "vertical"
+        padding: "8dp"
+        size_hint: None, None
+        size: "280dp", "180dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDLabel:
+            text: "Word of the day"
+            theme_text_color: "Secondary"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDSeparator:
+            height: "1dp"
+
+        MDLabel:
+            text: "Qgegrgeic: Extremely idealistic; unrealistic and impractical."  
+    
+<MenuGrid@GridLayout>:
+    cols: 4
+    row_force_default: True
+    row_default_height: 30
+    MenuButton:
+        text: "Home"
+        on_release:
+            app.root.current = "Main"
+    MenuButton:
+        text: "Play"
+        on_release:
+            app.root.current = "Play"    
+    MenuButton:
+        text: "Search"
+        on_release:
+            app.root.current = "Search" 
+    MenuButton:
+        text: "Preferences"
+        on_release:
+            app.root.current = "Preference"
+            
+<MainWindow>:
+    name: "Main"
+    MenuGrid:
+    FloatLayout:
+        size_hint: 1, 0.8
+        #pos_hint: {"x": 0.5, "y": 0.8}
+        MDCard:
+            orientation: "vertical"
+            padding: "8dp"
+            size_hint: None, None
+            size: "280dp", "180dp"
+            pos_hint: {"center_x": .5, "center_y": .9}
+
+            MDLabel:
+                text: "Word of the day"
+                theme_text_color: "Secondary"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDSeparator:
+                height: "1dp"
+
+            MDLabel:
+                text: "Quixotic: Extremely idealistic; unrealistic and impractical."
+
+        MDCard:
+            orientation: "vertical"
+            padding: "8dp"
+            size_hint: None, None
+            size: "280dp", "180dp"
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDLabel:
+                text: "Word of the day"
+                theme_text_color: "Secondary"
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            MDSeparator:
+                height: "1dp"
+
+            MDLabel:
+                text: "Qgegrgeic: Extremely idealistic; unrealistic and impractical." 
+
+<PlayWindow>:
+    name: "Play"
+    MenuGrid:
+    Label:
+        text: "Play games here"
+
+<SearchWindow>:
+    name: "Search"
+    MenuGrid:
+    Label:
+        text: "Search words"
+
+<PreferenceWindow>:
+    name: "Preference"
+    MenuGrid:
+    Label:
+        text: "Change your preferences"
